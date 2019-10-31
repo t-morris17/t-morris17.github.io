@@ -53,36 +53,38 @@
             } 
             // TODO 5a) if the circle has gone past of the LEFT side of the screen then place it on the RIGHT
             else if ( / * Fill me in! * / ) {
-                if (circle.x > canvas.width) {
-     circle.x = 0;
+            if (circle.x > canvas.width) {
+              circle.x = 0;
             } 
     
             // TODO 5b) if the circle has gone past of the TOP side of the screen then place it on the BOTTOM
             if ( / * Fill me in! * / ) {
-                canvas.width    // The the width of our canvas.
-canvas.height   // The height of our canvas.
-circle.x        // The circle's position along the x-axis, good for testing the right and left side borders.
-circle.y        // The circle's position along the y-axis, good for testing the top and bottom borders.
-circle.radius   // Each circle is of a different size, so the radius will provide this information to you. 
-            }
+           
+        canvas.width    // The the width of our canvas.
+        canvas.height   // The height of our canvas.
+        circle.x        // The circle's position along the x-axis, good for testing the right and left side borders.
+        circle.y        // The circle's position along the y-axis, good for testing the top and bottom borders.
+        circle.radius   // Each circle is of a different size, so the radius will provide this information to you. 
+          
             // TODO 5c) if the circle has gone past of the BOTTOM side of the screen then place it OFF-SCREEN TOP
-            else if ( / * Fill me in! * / ) {
+         
             
             }
             // YOUR TODO 5 CODE ENDS HERE //////////////////////////
         }
-    
-        function update() {
-            // TODO 4 : Update the circle's position //
-            function update() {
-    // TODO 4 : Update the circle's position //
-    physikz.updatePosition(circles[0]);
-    // code to call the function on the other 4 circles...
+        // The the width of our canvas.
+
+          // TODO 4 : Update the circle's position //
+           function update() {
+         // TODO 4 : Update the circle's position //
+         physikz.updatePosition(circles[0]);
+        // code to call the function on the other 4 circles...
 }
 
             
             // TODO 5 : Call game.checkCirclePosition on your circles.
-          
+          if (circle.x > canvas.width) {
+          circle.x = 0;
         }
         
         ////////////////////////////////////////////////////////////////////
