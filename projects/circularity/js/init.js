@@ -45,6 +45,14 @@
         view.addChild(fps);
         app.addUpdateable(fps); 
         game.checkCirclePosition = function(circle) {
+            var counter = 0; 
+           while (counter < 10) {
+           // do something
+           counter++
+}
+
+for (var counter = 0; counter < 10; counter++) {
+    // do something
             // TODO 5 : YOUR CODE STARTS HERE //////////////////////
             
             // if the circle has gone past the RIGHT side of the screen then place it on the LEFT
