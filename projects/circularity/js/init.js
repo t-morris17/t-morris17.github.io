@@ -10,7 +10,7 @@
         fps = draw.fps('#000');
         
     
-    window.opspark.makeGame = function() {
+       window.opspark.makeGame = function() {
         
         window.opspark.game = {};
         var game = window.opspark.game;
@@ -32,84 +32,70 @@
             view.addChild(circle);
             circles.push(circle);
         }
-// other code...
+       // other code...
     
 
         // TODO 3 / 7 : Call the drawCircle function functionName(<arguments go here if the function has parameters>);
-        drawCircle() ; 
-        drawCircle() ;
-        drawCircle() ;
-        drawCircle() ;
-        drawCircle() ;
+         drawCircle() ; 
+         drawCircle() ;
+         drawCircle() ;
+         drawCircle() ;
+         drawCircle() ;
         
-        view.addChild(fps);
-        app.addUpdateable(fps); 
-        game.checkCirclePosition = function(circle) {
-            var counter = 0; 
-           while (counter < 10) {
-           // do something
-           counter++
+          view.addChild(fps);
+          app.addUpdateable(fps); 
+          game.checkCirclePosition = function(circle) {
 }
 
-for (var counter = 0; counter < 10; counter++) {
-    // do something
-            // TODO 5 : YOUR CODE STARTS HERE //////////////////////
+           // do something
+           
+           // TODO 5 : YOUR CODE STARTS HERE //////////////////////
             
             // if the circle has gone past the RIGHT side of the screen then place it on the LEFT
             if ( circle.x > canvas.width ) {
                 circle.x = 0;
             } 
             // TODO 5a) if the circle has gone past of the LEFT side of the screen then place it on the RIGHT
-            else if ( / * Fill me in! * / ) {
-            if (circle.x > canvas.width) {
-              circle.x = 0;
-            } 
+            else if ( circle.x < 0 ) {
+              circle.x = canvas.width;
+        }
     
             // TODO 5b) if the circle has gone past of the TOP side of the screen then place it on the BOTTOM
-            if ( / * Fill me in! * / ) {
-           
-        canvas.width    // The the width of our canvas.
-        canvas.height   // The height of our canvas.
-        circle.x        // The circle's position along the x-axis, good for testing the right and left side borders.
-        circle.y        // The circle's position along the y-axis, good for testing the top and bottom borders.
-        circle.radius   // Each circle is of a different size, so the radius will provide this information to you. 
+            if ( circle.y < 0) {
+               circle.y = canvas.height;
+  
           
             // TODO 5c) if the circle has gone past of the BOTTOM side of the screen then place it OFF-SCREEN TOP
-         
-            
+            else if (circle.y > canvas.height) {
+             circle.y = 0;
             }
-            // YOUR TODO 5 CODE ENDS HERE //////////////////////////
+           
+           // YOUR TODO 5 CODE ENDS HERE //////////////////////////
         }
-        // The the width of our canvas.
+      
+    
+        function update() {
 
           // TODO 4 : Update the circle's position //
-           function update() {
-         // TODO 4 : Update the circle's position //
-         physikz.updatePosition(circles[0]);
-        // code to call the function on the other 4 circles...
-}
-
-            
+          for (var i = 0; i < circles.length; i++) {
+              var eachCircle = circles [i];
+              physikz.updatePosition(eachCircle);
+             game.checkCirclePosition(eachCircle);
+  
             // TODO 5 : Call game.checkCirclePosition on your circles.
-          if (circle.x > canvas.width) {
-          circle.x = 0;
-        }
-        
+          
         ////////////////////////////////////////////////////////////////////
         // NO CODE BELOW HERE                                             //
         ////////////////////////////////////////////////////////////////////
-        
-        game.circle = circle;
-        game.circles = circles;
-        game.drawCircle = drawCircle;
-        game.update = update;
-        
-        app.addUpdateable(window.opspark.game);
-    }
-};
-
-// DON'T REMOVE THIS CODE //////////////////////////////////////////////////////
-if((typeof process !== 'undefined') &&
+       game.circle = circle;
+       game.circles = circles;
+       game.drawCircle = drawCircle;
+       game.update = update;
+       
+       app.addUpdateable(window.opspark.game);
+}
+      // DON'T REMOVE THIS CODE //////////////////////////////////////////////////////
+    if((typeof process !== 'undefined') &&
     (typeof process.versions.node !== 'undefined')) {
     // here, export any references you need for tests //
     module.exports = init;
