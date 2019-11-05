@@ -45,7 +45,7 @@
           view.addChild(fps);
           app.addUpdateable(fps); 
           game.checkCirclePosition = function(circle) {
-}
+};
 
            // do something
            
@@ -58,12 +58,13 @@
             // TODO 5a) if the circle has gone past of the LEFT side of the screen then place it on the RIGHT
             else if ( circle.x < 0 ) {
               circle.x = canvas.width;
-        }
+            }
     
             // TODO 5b) if the circle has gone past of the TOP side of the screen then place it on the BOTTOM
             if ( circle.y < 0) {
                circle.y = canvas.height;
-  
+             }
+
           
             // TODO 5c) if the circle has gone past of the BOTTOM side of the screen then place it OFF-SCREEN TOP
             else if (circle.y > canvas.height) {
@@ -71,7 +72,7 @@
             }
            
            // YOUR TODO 5 CODE ENDS HERE //////////////////////////
-        }
+        };
       
     
         function update() {
@@ -81,7 +82,7 @@
               var eachCircle = circles [i];
               physikz.updatePosition(eachCircle);
              game.checkCirclePosition(eachCircle);
-  
+            }
             // TODO 5 : Call game.checkCirclePosition on your circles.
           
         ////////////////////////////////////////////////////////////////////
@@ -93,11 +94,11 @@
        game.update = update;
        
        app.addUpdateable(window.opspark.game);
-}
+};
       // DON'T REMOVE THIS CODE //////////////////////////////////////////////////////
     if((typeof process !== 'undefined') &&
     (typeof process.versions.node !== 'undefined')) {
     // here, export any references you need for tests //
     module.exports = init;
 }
-
+}
